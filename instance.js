@@ -23,13 +23,12 @@ getServices = () => {
     } else {
 
         app.get('/', (req, res) => {
-            res.send(JSON.stringify(data))
+          res.send(JSON.stringify(data.Reservations[data.Reservations.length - 1].Instances))
         })
-        console.log("Success", data.Reservations[0].Instances);
+        console.log("Success", data.Reservations[data.Reservations.length - 1].Instances);
     }
     });
 }
-
 getServices();
 app.listen(port, () => {
 console.log(`Example app listening at http://localhost:${port}`)
