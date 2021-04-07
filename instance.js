@@ -7,11 +7,9 @@ dotenv.config();
 // Import required AWS SDK clients and commands for Node.js
 
 getServices = () => {
-    // AWS.config.setPromisesDependency();
+    AWS.config.setPromisesDependency();
     AWS.config.update({
-        accessKeyId: process.env.ACCESS_KEY,
-        secretAccessKey: process.env.SECRET_KEY,
-        region: process.env.REGION,
+        region: "ap-southeast-2",
     })
 
     var ec2 = new AWS.EC2({apiVersion: '2016-11-15'})
